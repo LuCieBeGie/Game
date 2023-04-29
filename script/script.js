@@ -56,11 +56,19 @@ function game() {
     console.log(`You ${playerScore}`);
     console.log(`Computer ${computerScore}`);
     if (playerScore > computerScore) {
-        alert('Game Over!!!! Congratulation!!! YOU WON!!!!!!!!')
-        console.log('Game Over!!!! Congratulation!!! YOU WON!!!!!!!!');
+        alert(`Game Over!!!! Congratulation!!! YOU WON!!!!!!!!
+        You ${playerScore} 
+        Computer ${computerScore}`)
+        console.log(`Game Over!!!! Congratulation!!! YOU WON!!!!!!!!
+        You ${playerScore}
+        Computer ${computerScore}`);
     } else {
-        alert('Game Over!!!! OOPS!!! YOU LOST')
-        console.log('Game Over!!!! OOPS!!! YOU LOST');
+        alert(`Game Over!!!! OOPS!!! YOU LOST !!! 
+        You ${playerScore}
+        Computer ${computerScore}`)
+        console.log(`Game Over!!!! OOPS!!! YOU LOST !!! 
+        You ${playerScore}
+        Computer ${computerScore}`);
     }
 }
 
