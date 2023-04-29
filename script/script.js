@@ -46,7 +46,7 @@ const playRound = (playerSelection, computerSelection) => {
 function game() {
     for (let i = 0; i < 5; i++) {
         let round = playerScore + computerScore
-        let playerSelection = window.prompt(` Round N${round + 1} Please enter your choise: rock, paper, scissors`).toLowerCase()
+        let playerSelection = window.prompt(` Round N${round + 1} Please enter your choise: rock, paper, scissors`).toLowerCase().trim()
         let computerSelection = computerPlay()
         if (playerScore + computerScore !== 5) {
             i = playerScore + computerScore
