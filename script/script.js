@@ -8,28 +8,31 @@ function computerPlay() {
 
 const playRound = (playerSelection, computerSelection) => {
 
+    let player = playerSelection.toUpperCase()
+    let computer = computerSelection.toUpperCase()
+
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        alert(`You Won! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`);
+        alert(`You Won! ${player} beats ${computer}`);
         playerScore++
     }
     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        alert(`You Won! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`);
+        alert(`You Won! ${player} beats ${computer}`);
         playerScore++
     }
     else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        alert(`You Won! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`);
+        alert(`You Won! ${player} beats ${computer}`);
         playerScore++
     }
     else if (computerSelection == 'rock' && playerSelection == 'scissors') {
-        alert(`You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`);
+        alert(`You Lose! ${computer} beats ${player}`);
         computerScore++
     }
     else if (computerSelection == 'scissors' && playerSelection == 'paper') {
-        alert(`You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`);
+        alert(`You Lose! ${computer} beats ${player}`);
         computerScore++
     }
     else if (computerSelection == 'paper' && playerSelection == 'rock') {
-        alert(`You Lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`);
+        alert(`You Lose! ${computer} beats ${player}`);
         computerScore++
     }
     else if (playerSelection === computerSelection) {
