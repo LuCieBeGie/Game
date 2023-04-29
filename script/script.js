@@ -42,7 +42,7 @@ const playRound = (playerSelection, computerSelection) => {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Please enter your choise').toLowerCase()
+        let playerSelection = window.prompt('Please enter your choise').toLowerCase()
         let computerSelection = computerPlay()
         if (playerScore + computerScore !== 5) {
             i = playerScore + computerScore
