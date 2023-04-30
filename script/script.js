@@ -19,8 +19,8 @@ function playerPlay() {
 
 const playRound = (playerSelection, computerSelection) => {
 
-    let player
-    let computer
+    let player = playerSelection.toUpperCase()
+    let computer = computerSelection.toUpperCase()
 
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
         alert(`You Won! ${player} beats ${computer}`);
