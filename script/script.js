@@ -19,31 +19,28 @@ function playerPlay() {
 
 const playRound = (playerSelection, computerSelection) => {
 
-    let player 
-    let computer 
-
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        alert(`You Won! ${player} beats ${computer}`);
+        alert(`You Won! ${playerSelection} beats ${computerSelection}`); 
         playerScore++
     }
     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        alert(`You Won! ${player} beats ${computer}`);
+        alert(`You Won! ${playerSelection} beats ${computerSelection}`);
         playerScore++
     }
     else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        alert(`You Won! ${player} beats ${computer}`);
+        alert(`You Won! ${playerSelection} beats ${computerSelection}`);
         playerScore++
     }
     else if (computerSelection == 'rock' && playerSelection == 'scissors') {
-        alert(`You Lose! ${computer} beats ${player}`);
+        alert(`You Lose! ${computerSelection} beats ${playerSelection}`);
         computerScore++
     }
     else if (computerSelection == 'scissors' && playerSelection == 'paper') {
-        alert(`You Lose! ${computer} beats ${player}`);
+        alert(`You Lose! ${computerSelection} beats ${playerSelection}`);
         computerScore++
     }
     else if (computerSelection == 'paper' && playerSelection == 'rock') {
-        alert(`You Lose! ${computer} beats ${player}`);
+        alert(`You Lose! ${computerSelection} beats ${playerSelection}`);
         computerScore++
     }
     else if (playerSelection === computerSelection) {
@@ -54,19 +51,6 @@ const playRound = (playerSelection, computerSelection) => {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = playerPlay()
-        let computerSelection = computerPlay()
-        if (playerScore + computerScore !== 5) {
-            i = playerScore + computerScore
-        }
-        playRound(playerSelection, computerSelection)
-    }
-    console.log(`You ${playerScore}`);
-    console.log(`Computer ${computerScore}`);
-    scoreCheck()
-}
 
 function scoreCheck() {
     if (playerScore > computerScore) {
@@ -87,4 +71,18 @@ function scoreCheck() {
     return playerScore, computerScore
 }
 
-game();
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = playerPlay()
+        let computerSelection = computerPlay()
+        if (playerScore + computerScore !== 5) {
+            i = playerScore + computerScore
+        }
+        playRound(playerSelection, computerSelection)
+    }
+    console.log(`You ${playerScore}`);
+    console.log(`Computer ${computerScore}`);
+    scoreCheck()
+}
+
+// game();
