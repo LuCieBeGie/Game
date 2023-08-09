@@ -17,12 +17,12 @@
         </div>
         <div class="round">
             <label for="playedQty" name="playedQty">Played rounds</label>
-            <input type="number" id="playedQty" name="playedQty" disabled>
+            <input type="text" id="playedQty" name="playedQty" disabled>
         </div>
         <button class="start">Start</button>
     </header>
     <section>
-        <figure class="selection">
+        <figure class="choice">
             <button data-selection="paper" value="paper">
                 <img src="images/paper.jpg">
             </button>
@@ -34,17 +34,16 @@
             </button>
         </figure>
     </section>
-    <section id="score">
+    <section class="results">
         <div class="score">
             <h3>You</h3>
             <input class="playerScore" value="0" disabled>
         </div>
-        <div class="score">
+        <div class="score" data-end>
             <h3>Computer</h3>
             <input class="computerScore" value="0" disabled>
         </div>
     </section>
-
 </body>
 <script src="script/script.js"></script>
 

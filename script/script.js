@@ -5,6 +5,9 @@ const playedQty = document.querySelector('#playedQty')
 const playerScore = document.querySelector('.playerScore')
 const computerScore = document.querySelector('.computerScore')
 const selectionButtons = document.querySelectorAll('[data-selection]')
+const end = document.querySelector('[data-end]')
+
+let playedRounds = 0
 
 const CHOICES = [
     {
@@ -24,66 +27,41 @@ const CHOICES = [
     }
 ]
 
-selectionButtons.forEach((button) => {
-    button.addEventListener('click', function (e) {
-        const selectedButton = button.dataset.madeChoice
-        const madeChoice = CHOICES.find(choice => choice.name === selectedButton)
+function playerPlay(selection) {
+    const computerSelection = computerPlay()
+    const playerWins = playRound(selection, computerSelection)
+    const computerWins = playRound(computerSelection, selection)
+    addResult(computerSelection, computerWins)
+    addResult(selection, playerWins)
+    if (playerWins) playerScore.value++
+    if (computerWins) computerScore.value++
+    playedRounds++
+    playedQty.value = playedRounds
+    if (playedQty.value > 10) {
+        alert('Maximum quantity is reached')
+        playerScore.value = 0
+        computerScore.value = 0
+        playedQty.value = ''
+    }
+}
 
-    })
-})
+function addResult(selection, winner) {
+    const img = document.createElement('img')
+    img.src = selection.image
+    img.classList.add('selection')
+    end.after(img)
+    if (winner) img.classList.add('winner')
+}
 
 function computerPlay() {
-    let computerSelection = []
-    for (let el of selectionButtons.values()) {
-        computerSelection.push(el.value);
-    }
-    return computerSelection[(Math.floor(Math.random() * selectionButtons.length))]
+    let computerChoice
+    return computerChoice = CHOICES[(Math.floor(Math.random() * CHOICES.length))]
 }
 
-
-function playerPlay() {
-    
+const playRound = (playerchoise, randomSelection) => {
+    return playerchoise.beats === randomSelection.name
 }
 
-playerPlay()
-
-const playRound = (madeChoice, randomSelection) => {
-    return madeChoice.beats === randomSelection.beats
-}
-
-function winnerDeclare(winner) {
-    const computerChoice = computerPlay();
-    const playerChoice = playerPlay();
-    const playerWins = playRound(playerChoice, computerChoice)
-    const computerWins = playRound(computerChoice, playerChoice)
-    console.log(playerWins, computerWins);
-}
-
-winnerDeclare()
-
-
-
-
-
-
-// let round = 0
-
-// function roundQuality() {
-//     let maxLength = 10;
-//     roundQty.addEventListener('change', function (e) {
-//         if (e.target.value <= maxLength) {
-//             round = e.target.value
-//             console.log(round);
-//         }
-//         else {
-//             alert('Maximum quantity of rounds is 10. Please enter a valid quantity')
-//             e.target.value = ''
-//         }
-//         return round
-//     })
-// }
-
-// playRound()
 
 // function scoreCheck() {
 //     if (playerScore > computerScore) {
@@ -104,30 +82,31 @@ winnerDeclare()
 //     return playerScore, computerScore
 // }
 
-// function game() {
-//     start.addEventListener('click', function () {
-//         let playerSelection = playerPlay()
-//         let computerSelection = computerPlay()
-//         if (round !== 0 && roundQty.value !== '') {
-//             roundQty.value = ''
-//             playRound(playerSelection, computerSelection)
-//             console.log(playerSelection, computerSelection);
-//         }
-//         else {
+function game() {
+    start.addEventListener('click', function () {
+        let playerSelection = playerPlay()
+        let computerSelection = computerPlay()
+        if (round !== 0 && roundQty.value !== '') {
+            roundQty.value = ''
+            playRound(playerSelection, computerSelection)
+            console.log(playerSelection, computerSelection);
+        }
+        
+        else {
 
-//             alert('Please enter a valid quantity of rounds')
-//             // for (let i = 0; i < round; i++) {
-//             //     if (playerScore + computerScore !== round) {
-//             //         i = playerScore + computerScore
-//             //         playedQty.value = playerScore + computerScore
-//             //     }
-//             // }
+            alert('Please enter a valid quantity of rounds')
+            // for (let i = 0; i < round; i++) {
+            //     if (playerScore + computerScore !== round) {
+            //         i = playerScore + computerScore
+            //         playedQty.value = playerScore + computerScore
+            //     }
+            // }
 
-//         }
-//         // console.log(`You ${playerScore}`);
-//         // console.log(`Computer ${computerScore}`);
-//         // scoreCheck()
-//     })
-// }
+        }
+        // console.log(`You ${playerScore}`);
+        // console.log(`Computer ${computerScore}`);
+        // scoreCheck()
+    })
+}
 
-// game();
+game();
