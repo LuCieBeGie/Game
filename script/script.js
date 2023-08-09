@@ -27,6 +27,15 @@ const CHOICES = [
     }
 ]
 
+selectionButtons.forEach(button => {
+    button.addEventListener('click', e=>{
+        const selectionName = button.dataset.selection
+        const madeChoice = CHOICES.find(choice => choice.name === selectionName)
+        playerPlay(madeChoice)
+        computerPlay()
+    })
+})
+
 function playerPlay(selection) {
     const computerSelection = computerPlay()
     const playerWins = playRound(selection, computerSelection)
@@ -82,31 +91,31 @@ const playRound = (playerchoise, randomSelection) => {
 //     return playerScore, computerScore
 // }
 
-function game() {
-    start.addEventListener('click', function () {
-        let playerSelection = playerPlay()
-        let computerSelection = computerPlay()
-        if (round !== 0 && roundQty.value !== '') {
-            roundQty.value = ''
-            playRound(playerSelection, computerSelection)
-            console.log(playerSelection, computerSelection);
-        }
+// function game() {
+//     start.addEventListener('click', function () {
+//         let playerSelection = playerPlay()
+//         let computerSelection = computerPlay()
+//         if (round !== 0 && roundQty.value !== '') {
+//             roundQty.value = ''
+//             playRound(playerSelection, computerSelection)
+//             console.log(playerSelection, computerSelection);
+//         }
         
-        else {
+//         else {
 
-            alert('Please enter a valid quantity of rounds')
-            // for (let i = 0; i < round; i++) {
-            //     if (playerScore + computerScore !== round) {
-            //         i = playerScore + computerScore
-            //         playedQty.value = playerScore + computerScore
-            //     }
-            // }
+//             alert('Please enter a valid quantity of rounds')
+//             // for (let i = 0; i < round; i++) {
+//             //     if (playerScore + computerScore !== round) {
+//             //         i = playerScore + computerScore
+//             //         playedQty.value = playerScore + computerScore
+//             //     }
+//             // }
 
-        }
-        // console.log(`You ${playerScore}`);
-        // console.log(`Computer ${computerScore}`);
-        // scoreCheck()
-    })
-}
+//         }
+//         // console.log(`You ${playerScore}`);
+//         // console.log(`Computer ${computerScore}`);
+//         // scoreCheck()
+//     })
+// }
 
-game();
+// game();
