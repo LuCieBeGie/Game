@@ -6,39 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Welcome to ROCK, PAPER, SCISSORS!</title>
 </head>
 
 <body>
     <header>
-        <h1>Welcome to ROCK, PAPER, SCISSORS!</h1>
-        <input type="number" id="gameQty" name="gameQty" placeholder="Number of games">
-        <button>Start</button>
+        <div class="round">
+            <label for="roundQty" name="roundQty">Total number of rounds</label>
+            <input type="number" id="roundQty" name="roundQty">
+        </div>
+        <div class="round">
+            <label for="playedQty" name="playedQty">Played rounds</label>
+            <input type="number" id="playedQty" name="playedQty" disabled>
+        </div>
+        <button class="start">Start</button>
     </header>
-    <main id="score">
-        <div class="playerScore">
-            <h3>Your Score</h3>
-            <input type="number" disabled>
-        </div>
-        <div class="playerScore">
-            <h3>Computer Score</h3>
-            <input type="number" disabled>
-        </div>
-    </main>
     <section>
-        <figure class="user-section">
-            <h3>your choice is:</h3>
-            <span><img src="images/paper.jpg"></span>
-            <span><img src="images/rock.jpg"></span>
-            <span><img src="images/scissors.jpg"></span>
-        </figure>
-        <figure class="computer-section">
-            <h3>computer choice is:</h3>
-            <span><img src="images/paper1.jpg"></span>
-            <span><img src="images/rock1.jpg"></span>
-            <span><img src="images/scissors1.jpg"></span>
+        <figure class="selection">
+            <button data-selection="paper" value="paper">
+                <img src="images/paper.jpg">
+            </button>
+            <button data-selection="rock" value="rock">
+                <img src="images/rock.jpg">
+            </button>
+            <button data-selection="scissors" value="scissors">
+                <img src="images/scissors.jpg">
+            </button>
         </figure>
     </section>
+    <section id="score">
+        <div class="score">
+            <h3>You</h3>
+            <input class="playerScore" value="0" disabled>
+        </div>
+        <div class="score">
+            <h3>Computer</h3>
+            <input class="computerScore" value="0" disabled>
+        </div>
+    </section>
+
 </body>
 <script src="script/script.js"></script>
 

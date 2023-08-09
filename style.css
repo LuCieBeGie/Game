@@ -3,7 +3,10 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(to right, rgb(131, 143, 255), rgb(161, 165, 123));
+    background-image: url('images/background.jpg');
+    background-position: fixed center;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-shadow: rgb(46, 45, 45) 1px 0 10px;
 }
 
@@ -12,7 +15,12 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #3d3d32;
+    color: #e1e1a0;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
 }
 
 header>* {
@@ -23,7 +31,8 @@ header input {
     width: fit-content;
     height: 25px;
     border-radius: 3px;
-    border: none
+    border: none;
+    margin-top: 3%
 }
 
 header button {
@@ -31,64 +40,86 @@ header button {
     height: 35px;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
     color: rgba(236, 236, 192);
-    background-color: #361212;
+    background-color: #56D3FF;
     animation: shine 700ms infinite;
 }
 
-main {
+#score {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2%;
 }
 
-.playerScore {
+.score {
     width: 25%;
-    margin-left: 3%;
     color: #e2caca;
 }
 
-.playerScore input {
-    width: 40px;
-    height: 40px;
+.score input {
+    max-width: fit-content;
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
     border: none;
     background-color: #fbfec2;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
 }
 
-section {
+.play {
+    color: #559e62;
+    cursor: pointer;
+    width: fit-content;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    color: rgba(236, 236, 192);
+    background-color: #56D3FF;
+
+}
+
+.selection {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffc5c5;
 }
 
-section figure {
+.selection figure {
     width: 20%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    flex-direction: column;
+    flex-direction: row;
     list-style: none;
 }
 
-span {
+figure button {
     margin-top: 2%;
+    margin-left: 5%;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    border: none;
+    appearance: none;
+    background-color: inherit;
 }
 
-span img {
+figure button img {
+    cursor: pointer;
     position: absolute;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     transition: all 1s ease;
-
+    top: 0px;
+    left: 0px;
 }
 
-.user-section img:hover {
+.selection img:hover {
     position: absolute;
     transform: scale(1.5);
     z-index: 1;
