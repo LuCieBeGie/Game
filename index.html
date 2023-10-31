@@ -12,12 +12,13 @@
 <body>
     <header>
         <div class="round">
-            <label for="roundQty" name="roundQty">Total number of rounds</label>
-            <input type="number" id="roundQty" name="roundQty">
+            <label for="roundQty" name="roundQty" >Total number of
+                rounds</label>
+            <input type="number" id="roundQty" name="roundQty" min="2" max="20">
         </div>
         <div class="round">
             <label for="playedQty" name="playedQty">Played rounds</label>
-            <input type="text" id="playedQty" name="playedQty" disabled>
+            <input type="text" id="playedQty" name="playedQty" value="0" disabled>
         </div>
         <button class="start">Start</button>
     </header>
@@ -46,5 +47,6 @@
     </section>
 </body>
 <script src="script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>

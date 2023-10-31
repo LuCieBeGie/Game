@@ -5,7 +5,7 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    background-image: url('images/background.jpg');
+    background-image: url("images/background.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,10 +25,21 @@ header {
     flex-direction: column;
 }
 
+#roundQty {
+    background-color: #559e62;
+    color: #ffffff;
+    width: 90%;
+    margin: 10px auto;
+    height: 30px;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
 #playedQty {
     width: 20%;
     height: 40px;
-    color: white;
+    color: rgb(209, 209, 209);
     text-align: center;
     margin: auto;
     margin-top: 4%;
@@ -37,7 +48,7 @@ header {
 }
 
 header>* {
-    margin: 1%
+    margin: 1%;
 }
 
 header input {
@@ -45,7 +56,7 @@ header input {
     height: 25px;
     border-radius: 3px;
     border: none;
-    margin-top: 3%
+    margin-top: 3%;
 }
 
 header button {
@@ -55,7 +66,7 @@ header button {
     border: none;
     cursor: pointer;
     color: rgba(236, 236, 192);
-    background-color: #56D3FF;
+    background-color: #56d3ff;
     animation: shine 700ms infinite;
 }
 
@@ -95,11 +106,10 @@ header button {
     border-radius: 5px;
     border: none;
     color: rgba(236, 236, 192);
-    background-color: #56D3FF;
+    background-color: #56d3ff;
 }
 
 .choice {
-
     align-items: center;
     justify-content: center;
     color: #ffc5c5;
