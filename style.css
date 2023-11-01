@@ -110,6 +110,7 @@ header button {
 }
 
 .choice {
+    display: flex;
     align-items: center;
     justify-content: center;
     color: #ffc5c5;
@@ -124,8 +125,7 @@ header button {
 }
 
 figure button {
-    margin-top: 2%;
-    margin-left: 5%;
+    margin: 3%;
     position: relative;
     width: 70px;
     height: 70px;

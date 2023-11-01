@@ -27,7 +27,13 @@ const CHOICES = [
     }
 ]
 
-start.addEventListener('click', e => {
+function startGame() {
+    start.addEventListener('click', e => {
+        chooseChoice()
+    })
+}
+
+function chooseChoice() {
     selectionButtons.forEach(button => {
         button.addEventListener('click', e => {
             const selectionName = button.dataset.selection
@@ -36,7 +42,8 @@ start.addEventListener('click', e => {
             computerPlay()
         })
     })
-}, { once: true })
+}
+
 
 function playerPlay(selection) {
     const computerSelection = computerPlay()
@@ -61,7 +68,7 @@ function playerPlay(selection) {
 function clearAll() {
     playerScore.value = 0
     computerScore.value = 0
-    playedQty.value = ''
+    playedQty.value = 0
     roundQty.value = ''
     removeResult()
 }
@@ -112,3 +119,5 @@ function scoreCheck() {
         });
     }
 }
+
+startGame()
